@@ -61,7 +61,7 @@ class GoogleScraper:
 
     def parse(self, html):
         content = BeautifulSoup(html, 'lxml')
-        link= [link.next_element['href'] for link in content.findAll('div', 'yuRUbf')]
+        link = [link.a['href'] for link in content.findAll('div', 'yuRUbf')]
         return link
     
     def run(self, key,max=1):
